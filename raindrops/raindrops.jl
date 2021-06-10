@@ -3,8 +3,8 @@ function raindrops(number)
     #d = Dict( 3 => "Pling", 5 => "Plang" , 7 => "Plong")
     rain_tuple = [(3,"Pling"), (5,"Plang"), (7,"Plong")]
 
-    res = Base.mapfoldl(k -> number % first(k) == 0 ? last(k) : "", *, rain_tuple)
-
+    res = mapreduce(k -> number % first(k) == 0 ? last(k) : "", *, rain_tuple)
+    #res = mapreduce(k -> number % first(k) == 0 ? last(k) : "", *, rain_tuple)
 
     # res = ""
     # d = Dict( 3 => "Pling", 5 => "Plang" , 7 => "Plong")
